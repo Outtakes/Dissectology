@@ -1,6 +1,6 @@
 if (document.location.href.search("edpuzzle.com/assignments/") != -1 && document.location.href.search("edpuzzle.com/media/") != -1) {
-	alert("You aren't on a edpuzle assignment. If you think this is an error please DM East_Arctica#9238 on discord!")
-	throw new Error("You aren't on a edpuzle assignment. If you think this is an error please DM East_Arctica#9238 on discord!")
+	alert("You aren't on a edpuzle assignment.")
+	throw new Error("You aren't on a edpuzle assignment. ")
 }
 
 document.head.insertAdjacentHTML('beforeend', `<style type="text/css">
@@ -26,20 +26,7 @@ if (document.location.href.includes("edpuzzle.com/assignments/")) {
 	let end = document.location.href.search("/watch")
 	let QuizID = document.location.href.slice(start, end)
 	let APIURL = "https://edpuzzle.com/api/v3/assignments/" + QuizID
-/*
-	This doesn't work for some reason...
-	let xhttp = new XMLHttpRequest;
-	xhttp.open("GET", APIURL, 0)
-	xhttp.send()
-	QuizData = JSON.parse(xhttp.responseText)
-	
-	This does though??????
-	$.get(APIURL).success((response) => {
-		console.log(response)
-		QuizData = response
-	})
-	Haha so funny thing this doesn't work anymore. It's been one day.
-*/
+
 	let xhttp = new XMLHttpRequest;
 	xhttp.open("GET", APIURL, 0)
 	xhttp.setRequestHeader("x-edpuzzle-web-version", __EDPUZZLE_DATA__.version)
@@ -51,20 +38,7 @@ if (document.location.href.includes("edpuzzle.com/assignments/")) {
 	let end = document.location.href.length
 	let QuizID = document.location.href.slice(start, end)
 	let APIURL = "https://edpuzzle.com/api/v3/media/" + QuizID
-/*
-	This doesn't work for some reason...
-	let xhttp = new XMLHttpRequest;
-	xhttp.open("GET", APIURL, 0)
-	xhttp.send()
-	QuizData = JSON.parse(xhttp.responseText)
-	
-	This does though??????
-	$.get(APIURL).success((response) => {
-		console.log(response)
-		QuizData = response
-	})
-	Haha so funny thing this doesn't work anymore. It's been one day.
-*/
+
 	let xhttp = new XMLHttpRequest;
 	xhttp.open("GET", APIURL, 0)
 	xhttp.setRequestHeader("x-edpuzzle-web-version", __EDPUZZLE_DATA__.version)
